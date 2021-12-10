@@ -14,15 +14,15 @@ Best practices [cookiecutter](https://github.com/audreyr/cookiecutter) template 
 
 ## Quickstart
 ```sh
-# Install pipx if pipenv and cookiecutter are not installed
-python3 -m pip install pipx
-python3 -m pipx ensurepath
-
-# Install pipenv using pipx
-pipx install pipenv
+# Create new conda environment for the project
+conda create -n env_name python=3.8
+#Activate the environment
+conda activate env_name
+# Install cookiecutter
+pip install cookiecutter
 
 # Use cookiecutter to create project from this template
-pipx run cookiecutter gh:sourcery-ai/python-best-practices-cookiecutter
+cookiecutter ./python-best-practices-cookiecutter
 
 # Enter project directory
 cd <repo_name>
@@ -30,10 +30,10 @@ cd <repo_name>
 # Initialise git repo
 git init
 
-# Install dependencies
-pipenv install --dev
+# Install pre-commit package
+pip install pre-commit
 
 # Setup pre-commit and pre-push hooks
-pipenv run pre-commit install -t pre-commit
-pipenv run pre-commit install -t pre-push
+pre-commit install -t pre-commit
+pre-commit install -t pre-push
 ```
